@@ -1,23 +1,72 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
+import "./components/front/Header/Header.css"
+import Products from './components/front/Products/Products'
+import Cart from './components/front/Cart/Cart';
+import Header from './components/front/Header/Header';
 
-function App() {
+
+function App(props) {
+
+  const PAGE_PRODUCTS = 'products'
+  const PAGE_CART = 'cart'
+
+  const [page, setPage] = useState('products')
+  const [cart, setCart] = useState([])
+
+
+  const removeFromCart = (productToRemove) => {
+    setCart(cart.filter((productItem) => productItem !== productToRemove)
+    )
+  }
+
+  const addToCart = (productItem) => {
+    let newCart = [...cart]
+    let itemInCart = newCart.find(item => productItem.flavor === item.flavor)
+
+
+    if (itemInCart) {
+      itemInCart.quantity++;
+    } else {
+      itemInCart = {
+        ...productItem,
+        quantity: 1,
+      }
+      newCart.push(itemInCart)
+    }
+    setCart(newCart);
+  }
+
+  const navigateTo = (nextPage) => {
+    setPage(nextPage)
+  }
+
+  const clearCart = () => {
+    setCart([])
+  }
+
+  const getCartTotal = () => {
+    return cart.reduce(
+      (sum, { quantity }) => sum + quantity, 0
+    )
+  }
+
+  const setQuantity = (productItem, amount) => {
+    const newCart = [...cart]
+    newCart.find(item => item.flavor === productItem.flavor).quantity = amount;
+    setCart(newCart)
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {/*Header*/}
+      <Header PAGE_PRODUCTS={PAGE_PRODUCTS} PAGE_CART={PAGE_CART} cart={cart} navigateTo={navigateTo} getCartTotal={getCartTotal} />
+
+      {/*Produtos*/}
+      {page === PAGE_PRODUCTS && <Products addToCart={addToCart} />}
+      {page === PAGE_CART && <Cart cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} setQuantity={setQuantity} />}
     </div>
   );
 }
