@@ -5,7 +5,6 @@ const Products = ({ addToCart }) => {
 
   const { productItems } = Data;
 
-
   return (
     <>
       <div className='products'>

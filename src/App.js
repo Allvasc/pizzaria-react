@@ -1,19 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
 import "./components/front/Header/Header.css"
 import Products from './components/front/Products/Products'
 import Cart from './components/front/Cart/Cart';
 import Header from './components/front/Header/Header';
 
+const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
 
-function App(props) {
+function App() {
 
   const PAGE_PRODUCTS = 'products'
   const PAGE_CART = 'cart'
 
+  const [cart, setCart] = useState(cartFromLocalStorage)
   const [page, setPage] = useState('products')
-  const [cart, setCart] = useState([])
+ 
 
+  useEffect(() =>{
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart])
 
   const removeFromCart = (productToRemove) => {
     setCart(cart.filter((productItem) => productItem !== productToRemove)
