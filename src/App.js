@@ -14,40 +14,14 @@ function App() {
 
   const [cart, setCart] = useState(cartFromLocalStorage)
   const [page, setPage] = useState('products')
- 
 
-  useEffect(() =>{
+
+  useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart))
   }, [cart])
 
-  const removeFromCart = (productToRemove) => {
-    setCart(cart.filter((productItem) => productItem !== productToRemove)
-    )
-  }
-
-  const addToCart = (productItem) => {
-    let newCart = [...cart]
-    let itemInCart = newCart.find(item => productItem.flavor === item.flavor)
-
-
-    if (itemInCart) {
-      itemInCart.quantity++;
-    } else {
-      itemInCart = {
-        ...productItem,
-        quantity: 1,
-      }
-      newCart.push(itemInCart)
-    }
-    setCart(newCart);
-  }
-
   const navigateTo = (nextPage) => {
     setPage(nextPage)
-  }
-
-  const clearCart = () => {
-    setCart([])
   }
 
   const getCartTotal = () => {
@@ -56,13 +30,6 @@ function App() {
     )
   }
 
-  const setQuantity = (productItem, amount) => {
-    const newCart = [...cart]
-    newCart.find(item => item.flavor === productItem.flavor).quantity = amount;
-    setCart(newCart)
-  }
-
-
   return (
     <div className="App">
 
@@ -70,8 +37,8 @@ function App() {
       <Header PAGE_PRODUCTS={PAGE_PRODUCTS} PAGE_CART={PAGE_CART} cart={cart} navigateTo={navigateTo} getCartTotal={getCartTotal} />
 
       {/*Produtos*/}
-      {page === PAGE_PRODUCTS && <Products addToCart={addToCart} />}
-      {page === PAGE_CART && <Cart cart={cart} removeFromCart={removeFromCart} clearCart={clearCart} setQuantity={setQuantity} />}
+      {page === PAGE_PRODUCTS && <Products cart={cart} setCart={setCart} />}
+      {page === PAGE_CART && <Cart cart={cart} setCart={setCart}/>}
     </div>
   );
 }

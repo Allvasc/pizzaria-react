@@ -1,9 +1,24 @@
 import React from 'react'
 
-const Cart = ({ cart, clearCart, removeFromCart, setQuantity }) => {
+const Cart = ({ cart, setCart }) => {
 
     const getTotalSum = () => {
         return cart.reduce((sum, { price, quantity }) => sum + price * quantity, 0)
+    }
+
+    const setQuantity = (productItem, amount) => {
+        const newCart = [...cart]
+        newCart.find(item => item.flavor === productItem.flavor).quantity = amount;
+        setCart(newCart)
+      }
+
+    const clearCart = () => {
+        setCart([])
+    }
+
+    const removeFromCart = (productToRemove) => {
+        setCart(cart.filter((productItem) => productItem !== productToRemove)
+        )
     }
 
     return (

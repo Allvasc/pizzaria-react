@@ -1,9 +1,25 @@
 import "./Products.css"
 import Data from "../../back/Data/Data"
 
-const Products = ({ addToCart }) => {
+const Products = ({ setCart, cart }) => {
 
   const { productItems } = Data;
+
+  const addToCart = (productItem) => {
+    let newCart = [...cart]
+    let itemInCart = newCart.find(item => productItem.flavor === item.flavor)
+
+    if (itemInCart) {
+      itemInCart.quantity++;
+    } else {
+      itemInCart = {
+        ...productItem,
+        quantity: 1,
+      }
+      newCart.push(itemInCart)
+    }
+    setCart(newCart);
+  }
 
   return (
     <>
