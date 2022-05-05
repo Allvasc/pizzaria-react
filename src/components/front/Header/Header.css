@@ -47,3 +47,17 @@ header {
         padding: 40px 20px 0px 20px;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        margin: auto auto 50px;
+        padding-top: 40px;
+        width: 350px;
+        max-width: 350px;
+        padding: 40px 10px 0px 10px;
+    }
+}

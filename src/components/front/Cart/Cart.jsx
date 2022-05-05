@@ -26,7 +26,7 @@ const Cart = ({ cart, setCart }) => {
         <>
             <div className='header-cart'>
                 <h1>Carrinho</h1>
-                <h2>Total da compra: R${getTotalSum()}</h2>
+                <h2>Total: R${getTotalSum()}</h2>
             </div>
                 {cart.length > 0 && (<div className='case-buttons'>
                     <button className='limpar-carrinho' onClick={clearCart}>Limpar carrinho</button>

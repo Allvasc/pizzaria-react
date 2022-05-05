@@ -4,6 +4,7 @@
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
+    padding: 0 20px;
 }
 
 .case-buttons{
@@ -47,6 +48,7 @@
     flex-direction: column;
     width: 100%;
     text-align: left;
+    padding: 0 20px;
 }
 
 .card-carrinho{
@@ -57,6 +59,7 @@
     width: 100%;
     background-color: #fff;
     margin: 20px;
+    padding: 0;
 }
 
 .item-carrinho{
@@ -101,5 +104,22 @@
 
     .card-carrinho{
         margin: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .item-carrinho{
+        padding: 10px;
+        font-size: 1em;
+    }
+    
+    .produtos-carrinho{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 0;
     }
 }

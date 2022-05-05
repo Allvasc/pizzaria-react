@@ -4,6 +4,7 @@ import "./components/front/Header/Header.css"
 import Products from './components/front/Products/Products'
 import Cart from './components/front/Cart/Cart';
 import Header from './components/front/Header/Header';
+import Menu from './components/front/Menu/Menu';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
 
@@ -35,6 +36,9 @@ function App() {
 
       {/*Header*/}
       <Header PAGE_PRODUCTS={PAGE_PRODUCTS} PAGE_CART={PAGE_CART} cart={cart} navigateTo={navigateTo} getCartTotal={getCartTotal} />
+
+      {/*Menu*/}  
+      <Menu navigateTo={navigateTo} PAGE_PRODUCTS={PAGE_PRODUCTS} />
 
       {/*Produtos*/}
       {page === PAGE_PRODUCTS && <Products cart={cart} setCart={setCart} />}

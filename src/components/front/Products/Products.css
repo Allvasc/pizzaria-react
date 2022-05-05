@@ -107,3 +107,33 @@
     color: #FFD900;
     font-size: 1.2em;
 }
+
+@media only screen and (max-width: 600px) {
+    .products{
+        max-width: 350px;
+    }
+    .itemDescription{
+        padding: 10px 0 0 0;
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .card{
+        width: 310px;
+        max-width: 310px;
+    }
+    .card p{
+        margin: 0;
+        font-size: 0.9em;
+        color: darkgray;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .imgPizza {
+        height: 70;
+        padding-right: 10px;
+        margin: auto;
+    }
+}
