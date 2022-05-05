@@ -20,19 +20,19 @@
     flex-direction: row;
     cursor: pointer;
     width: 440px;
-    margin: auto;    
+    margin: auto;
 }
 
 .card:hover {
     border: 2px solid #0CB24C;
     overflow: hidden;
-    position: relative ;
+    position: relative;
 }
 
-.card:hover::after{
+.card:hover::after {
     content: 'Quero esse';
     position: absolute;
-    transform: translate(221px,-61px) rotate(40deg);
+    transform: translate(225px, -65px) rotate(40deg);
     width: 50px;
     text-align: center;
     background-color: #0CB24C;
@@ -42,16 +42,14 @@
     font-size: 0.7em;
     line-height: 10px;
     color: #FFD900;
-    
 }
 
-
-.card h2{
+.card h2 {
     margin: 5px 0;
     color: brown;
 }
 
-.card p{
+.card p {
     margin: 0;
     font-size: 0.9em;
     color: darkgray;
@@ -59,7 +57,8 @@
     justify-content: flex-start;
     align-items: center;
 }
-.card h3{
+
+.card h3 {
     color: rgb(47, 46, 46);
 }
 
@@ -75,7 +74,7 @@
     width: 350px;
 }
 
-.itemPreco{
+.itemPreco {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,7 +82,7 @@
 }
 
 
-.itemPreco button{
+.itemPreco button {
     background-color: #FFD900;
     border-radius: 100px;
     border: none;
@@ -93,7 +92,7 @@
     cursor: pointer;
 }
 
-.itemPreco button:active{
+.itemPreco button:active {
     background-color: #0CB24C;
     border-radius: 100px;
     border: none;
@@ -103,26 +102,28 @@
     cursor: pointer;
 }
 
-.star{
+.star {
     color: #FFD900;
     font-size: 1.2em;
 }
 
 @media only screen and (max-width: 600px) {
-    .products{
+    .products {
         max-width: 350px;
     }
-    .itemDescription{
+
+    .itemDescription {
         padding: 10px 0 0 0;
         font-size: 1em;
         width: 100%;
     }
 
-    .card{
+    .card {
         width: 310px;
         max-width: 310px;
     }
-    .card p{
+
+    .card p {
         margin: 0;
         font-size: 0.9em;
         color: darkgray;
@@ -131,9 +132,13 @@
         align-items: center;
         flex-wrap: wrap;
     }
+
     .imgPizza {
         height: 70;
         padding-right: 10px;
         margin: auto;
+    }
+    .card:hover::after {
+        transform: translate(155px, -70px) rotate(40deg);
     }
 }
