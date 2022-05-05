@@ -139,6 +139,6 @@
         margin: auto;
     }
     .card:hover::after {
-        transform: translate(150px, -65px) rotate(40deg);
+        transform: translate(145px, -60px) rotate(40deg);
     }
 }
