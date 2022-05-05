@@ -1,4 +1,5 @@
 import React from 'react'
+import '../Cart/Cart.css'
 
 const Cart = ({ cart, setCart }) => {
 
@@ -10,7 +11,7 @@ const Cart = ({ cart, setCart }) => {
         const newCart = [...cart]
         newCart.find(item => item.flavor === productItem.flavor).quantity = amount;
         setCart(newCart)
-      }
+    }
 
     const clearCart = () => {
         setCart([])
@@ -23,32 +24,34 @@ const Cart = ({ cart, setCart }) => {
 
     return (
         <>
-            <div>
-                <h1>Cart</h1>
-                {cart.length > 0 && (
-                    <button onClick={clearCart}>Clear Cart</button>
-                )}
+            <div className='header-cart'>
+                <h1>Carrinho</h1>
+                <h2>Total da compra: R${getTotalSum()}</h2>
             </div>
+                {cart.length > 0 && (<div className='case-buttons'>
+                    <button className='limpar-carrinho' onClick={clearCart}>Limpar carrinho</button>
+                    <button className='finalizar-compra'>Finalizar pedido</button>
+                </div>
 
-            <div className='products'>
+                )}
+
+
+
+            <div className='produtos-carrinho'>
                 {cart.map((productItem, idx) => (
-                    <div key={idx} className='card'>
-                        <div>
-                            <img className='imgPizza' src={productItem.image} alt={productItem.flavor} />
+                    <div key={idx} className='card-carrinho'>
+                        <div className='item-carrinho'>
+                            <h2>Pizza<br /> {productItem.flavor}</h2>
+                            <p>Unidade<br /> R$ {productItem.price}</p>
+                            <p>subtotal<br /> R${productItem.quantity * productItem.price}</p>
+                            <div>
+                                <p className='quantidade'>quantidade</p>
+                                <input type="number" value={productItem.quantity} onChange={(e) => setQuantity(productItem, parseInt(e.target.value))} />
+                            </div>
+                            <button className='remmove-item' onClick={() => removeFromCart(productItem)}>X</button>
                         </div>
-                        <div className='itemDescription'>
-                            <h2>{productItem.flavor}</h2>
-                            <p>{productItem.description}</p>
-                            <p>R$ {productItem.price}</p>
-                            <p>{productItem.quantity}</p>
-                            <input value={productItem.quantity} onChange={(e) => setQuantity(productItem, parseInt(e.target.value))} />
-                        </div>
-                        <button onClick={() => removeFromCart(productItem)}></button>
                     </div>
                 ))}
-                <div>
-                    Total: R${getTotalSum()}
-                </div>
             </div>
         </>
     )

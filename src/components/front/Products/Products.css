@@ -13,13 +13,54 @@
     background-color: rgb(255, 255, 255);
     padding: 0 20px;
     border-radius: 20px;
+    border: 2px solid transparent;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     cursor: pointer;
-    max-width: 450px;
-    margin: auto;
+    width: 440px;
+    margin: auto;    
+}
+
+.card:hover {
+    border: 2px solid #0CB24C;
+    overflow: hidden;
+    position: relative ;
+}
+
+.card:hover::after{
+    content: 'Quero esse';
+    position: absolute;
+    transform: translate(221px,-61px) rotate(40deg);
+    width: 50px;
+    text-align: center;
+    background-color: #0CB24C;
+    color: #fff;
+    border-radius: 50px;
+    padding: 15px 0;
+    font-size: 0.7em;
+    line-height: 10px;
+    color: #FFD900;
+    
+}
+
+
+.card h2{
+    margin: 5px 0;
+    color: brown;
+}
+
+.card p{
+    margin: 0;
+    font-size: 0.9em;
+    color: darkgray;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.card h3{
+    color: rgb(47, 46, 46);
 }
 
 
@@ -31,4 +72,38 @@
 .itemDescription {
     padding: 10px;
     margin: auto;
+    width: 350px;
+}
+
+.itemPreco{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.itemPreco button{
+    background-color: #FFD900;
+    border-radius: 100px;
+    border: none;
+    box-shadow: none;
+    font-size: 2em;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.itemPreco button:active{
+    background-color: #0CB24C;
+    border-radius: 100px;
+    border: none;
+    box-shadow: none;
+    font-size: 2em;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.star{
+    color: #FFD900;
+    font-size: 1.2em;
 }

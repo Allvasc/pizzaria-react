@@ -1,4 +1,5 @@
 import "./Products.css"
+import { AiFillStar } from "react-icons/ai";
 import Data from "../../back/Data/Data"
 
 const Products = ({ setCart, cart }) => {
@@ -25,15 +26,18 @@ const Products = ({ setCart, cart }) => {
     <>
       <div className='products'>
         {productItems.map((productItem) => (
-          <div key={productItem.id} className='card' >
+          <div key={productItem.id} className='card'>
             <div>
               <img className='imgPizza' src={productItem.image} alt={productItem.flavor} />
             </div>
             <div className='itemDescription'>
+              <p><AiFillStar className="star" /> 4.8</p>
               <h2>{productItem.flavor}</h2>
               <p>{productItem.description}</p>
-              <p>R$ {productItem.price}</p>
-              <button onClick={() => addToCart(productItem)}>+</button>
+              <div className="itemPreco">
+                <h3>R$ {productItem.price}</h3>
+                <button onClick={() => addToCart(productItem)} >+</button>
+              </div>
             </div>
           </div>
         ))}

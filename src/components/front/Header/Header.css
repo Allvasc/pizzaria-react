@@ -1,32 +1,49 @@
-*{
+* {
     list-style: none;
     text-decoration: none;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    margin:auto auto 50px;
+    margin: auto auto 50px;
     padding-top: 40px;
-    max-width: 1000px;
+    width: 1000px;
 }
 
-.logomarca{
+.logomarca {
     height: 80px;
     margin-right: auto;
+    cursor: pointer;
 }
 
-.cart{
+.cart {
     background-color: rgb(240, 205, 9);
     border-radius: 20px;
     color: brown;
-    margin:  0 0 0 auto;
+    margin: 0 0 0 auto;
     padding: 5px 10px;
     cursor: pointer;
 }
-.cart p{
+
+.cart p {
     margin: 0;
     padding: 0;
+}
+
+
+@media only screen and (max-width: 1030px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        margin: auto auto 50px;
+        padding-top: 40px;
+        width: auto;
+        max-width: 1000px;
+        padding: 40px 20px 0px 20px;
+    }
 }
