@@ -1,14 +1,20 @@
 {
   "files": {
     "main.css": "/pizzaria-react/static/css/main.fcdc7ab2.css",
-    "main.js": "/pizzaria-react/static/js/main.abc0f5cf.js",
+    "main.js": "/pizzaria-react/static/js/main.08b3030e.js",
+    "static/media/portuguesa.png": "/pizzaria-react/static/media/portuguesa.81d1bd47b1080d36ec67.png",
+    "static/media/marguerita.png": "/pizzaria-react/static/media/marguerita.6433a83c01ef6d9122fd.png",
+    "static/media/bauru.png": "/pizzaria-react/static/media/bauru.6923a215045f275ba78e.png",
+    "static/media/calabresa.png": "/pizzaria-react/static/media/calabresa.18e6c48e73e7d2d26fe9.png",
+    "static/media/mussarela.png": "/pizzaria-react/static/media/mussarela.81206668ad207adb852d.png",
+    "static/media/camarao.png": "/pizzaria-react/static/media/camarao.cb16db0d6e137967bfab.png",
     "static/media/logo.png": "/pizzaria-react/static/media/logo.949803b00936c765d4a0.png",
     "index.html": "/pizzaria-react/index.html",
     "main.fcdc7ab2.css.map": "/pizzaria-react/static/css/main.fcdc7ab2.css.map",
-    "main.abc0f5cf.js.map": "/pizzaria-react/static/js/main.abc0f5cf.js.map"
+    "main.08b3030e.js.map": "/pizzaria-react/static/js/main.08b3030e.js.map"
   },
   "entrypoints": [
     "static/css/main.fcdc7ab2.css",
-    "static/js/main.abc0f5cf.js"
+    "static/js/main.08b3030e.js"
   ]
 }
