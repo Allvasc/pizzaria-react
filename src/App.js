@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './App.css';
-import "./components/front/Header/Header.css"
-import Products from './components/front/Products/Products'
-import Cart from './components/front/Cart/Cart';
-import Header from './components/front/Header/Header';
-import Menu from './components/front/Menu/Menu';
+import "./components/Header/Header.css"
+import Products from './components/Products/Products'
+import Cart from './components/Cart/Cart';
+import Header from './components/Header/Header';
+import Menu from './components/Menu/Menu';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
 

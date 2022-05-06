@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Cart/Cart.css'
+import './Cart.css'
 
 const Cart = ({ cart, setCart }) => {
 

@@ -1,3 +1,11 @@
+import bauru from "../assets/bauru.png"
+import calabresa from "../assets/calabresa.png"
+import mussarela from "../assets/mussarela.png"
+import marguerita from "../assets/marguerita.png"
+import camarao from "../assets/camarao.png"
+import portuguesa from "../assets/portuguesa.png"
+
+
 const data = {
     productItems: [
         {
@@ -6,7 +14,7 @@ const data = {
             flavor: "Bauru",
             description: "Mussarela, presunto, requeijão, tomate, oregano...",
             price: 20.00,
-            image: "./assets/bauru.png",
+            image: bauru,
             sale: true
         },
         {
@@ -15,7 +23,7 @@ const data = {
             flavor: "Calabresa",
             description: "Mussarela, Calabresa, molho de tomate, oregano...",
             price: 20.00,
-            image: "./assets/calabresa.png",
+            image: calabresa,
             sale: false
         },
         {
@@ -24,7 +32,7 @@ const data = {
             flavor: "Mussarela",
             description: "Mussarela, azeitona, molho de tomate, oregano...",
             price: 20.00,
-            image: "./assets/mussarela.png",
+            image: mussarela,
             sale: false
         },
         {
@@ -33,7 +41,7 @@ const data = {
             flavor: "Marguerita",
             description: "Mussarela, tomate, manjericão, oregano, molho...",
             price: 20.00,
-            image: "./assets/marguerita.png",
+            image: marguerita,
             sale: false
         },
         {
@@ -42,7 +50,7 @@ const data = {
             flavor: "Camarão",
             description: "Mussarela, camarão, catupiri, requeijão, oregano...",
             price: 20.00,
-            image: "./assets/camarão.png",
+            image: camarao,
             sale: false
         },
         {
@@ -51,7 +59,7 @@ const data = {
             flavor: "Portuguesa",
             description: "Mussarela, pimentão, azeitona, oregano...",
             price: 20.00,
-            image: "./assets/portuguesa.png",
+            image: portuguesa,
             sale: false
         },
     ]

@@ -1,6 +1,6 @@
 import "./Products.css"
 import { AiFillStar } from "react-icons/ai";
-import Data from "../../back/Data/Data"
+import Data from "../../Data/Data"
 
 const Products = ({ setCart, cart }) => {
 
