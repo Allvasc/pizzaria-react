@@ -1,10 +1,13 @@
+import React from 'react'
 import './Menu.css'
 import { BsArrowRight } from "react-icons/bs";
+import { AuthContext } from '../../provider/auth'
 
 
-import React from 'react'
+function Menu() {
 
-function Menu({navigateTo, PAGE_PRODUCTS}) {
+    const { navigateTo, PAGE_PRODUCTS } = React.useContext(AuthContext)
+
     return (
         <div className='menu-case'>
             <div>
@@ -15,13 +18,10 @@ function Menu({navigateTo, PAGE_PRODUCTS}) {
                     <li>Ingredientes</li>
                 </ul>
                 <div className='link-massa'>
-                <h2>Recheios</h2>
-                <a href="http://">ESCOLHA A MASSA <BsArrowRight /></a>
+                    <h2>Recheios</h2>
+                    <a href="http://">ESCOLHA A MASSA <BsArrowRight /></a>
+                </div>
             </div>
-            </div>
-
-
-
         </div>
     )
 }

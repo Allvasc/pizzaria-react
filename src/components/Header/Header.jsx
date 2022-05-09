@@ -1,10 +1,12 @@
 import React from 'react'
 import "./Header.css"
 import logo from "../../logo.png"
+import { AuthContext } from '../../provider/auth'
 
 
-const Header = ({navigateTo, PAGE_PRODUCTS, PAGE_CART, getCartTotal, }) => {
+const Header = () => {
 
+    const { navigateTo, PAGE_PRODUCTS, PAGE_CART, getCartTotal } = React.useContext(AuthContext)
 
     return (
         <header className='header'>

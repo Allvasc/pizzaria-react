@@ -1,10 +1,14 @@
+import React from "react";
 import "./Products.css"
 import { AiFillStar } from "react-icons/ai";
-import Data from "../../Data/Data"
+import { AuthContext } from '../../provider/auth'
 
-const Products = ({ setCart, cart }) => {
 
-  const { productItems } = Data;
+const Products = () => {
+
+  const { data, cart, setCart } = React.useContext(AuthContext)
+
+  const { productItems } = data;
 
   const addToCart = (productItem) => {
     let newCart = [...cart]

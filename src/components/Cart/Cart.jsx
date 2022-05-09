@@ -1,26 +1,12 @@
 import React from 'react'
 import './Cart.css'
+import { AuthContext } from '../../provider/auth'
 
-const Cart = ({ cart, setCart }) => {
+const Cart = () => {
 
-    const getTotalSum = () => {
-        return cart.reduce((sum, { price, quantity }) => sum + price * quantity, 0)
-    }
+    const { cart, getTotalSum, clearCart, setQuantity, removeFromCart } = React.useContext(AuthContext)
 
-    const setQuantity = (productItem, amount) => {
-        const newCart = [...cart]
-        newCart.find(item => item.flavor === productItem.flavor).quantity = amount;
-        setCart(newCart)
-    }
 
-    const clearCart = () => {
-        setCart([])
-    }
-
-    const removeFromCart = (productToRemove) => {
-        setCart(cart.filter((productItem) => productItem !== productToRemove)
-        )
-    }
 
     return (
         <>
@@ -28,14 +14,12 @@ const Cart = ({ cart, setCart }) => {
                 <h1>Carrinho</h1>
                 <h2>Total: R${getTotalSum()}</h2>
             </div>
-                {cart.length > 0 && (<div className='case-buttons'>
-                    <button className='limpar-carrinho' onClick={clearCart}>Limpar carrinho</button>
-                    <button className='finalizar-compra'>Finalizar pedido</button>
-                </div>
+            {cart.length > 0 && (<div className='case-buttons'>
+                <button className='limpar-carrinho' onClick={clearCart}>Limpar carrinho</button>
+                <button className='finalizar-compra'>Finalizar pedido</button>
+            </div>
 
-                )}
-
-
+            )}
 
             <div className='produtos-carrinho'>
                 {cart.map((productItem, idx) => (
