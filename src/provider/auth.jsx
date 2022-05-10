@@ -6,11 +6,11 @@ import marguerita from "../assets/marguerita.png"
 import camarao from "../assets/camarao.png"
 import portuguesa from "../assets/portuguesa.png"
 
-export const AuthContext = React.createContext({})
+export const CartContext = React.createContext({})
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
 
-export const AuthProvider = (props) => {
+export const CartProvider = (props) => {
 
     const data = {
         productItems: [
@@ -110,8 +110,8 @@ export const AuthProvider = (props) => {
     }
 
     return (
-        <AuthContext.Provider value={{ data, cart, page, setCart, setPage, navigateTo, getCartTotal, PAGE_PRODUCTS, PAGE_CART, getTotalSum, setQuantity, clearCart, removeFromCart }}>
+        <CartContext.Provider value={{ data, cart, page, setCart, setPage, navigateTo, getCartTotal, PAGE_PRODUCTS, PAGE_CART, getTotalSum, setQuantity, clearCart, removeFromCart }}>
             {props.children}
-        </AuthContext.Provider>
+        </CartContext.Provider>
     )
 }

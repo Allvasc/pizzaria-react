@@ -1,12 +1,12 @@
 import React from 'react'
 import './Menu.css'
 import { BsArrowRight } from "react-icons/bs";
-import { AuthContext } from '../../provider/auth'
+import { CartContext } from '../../provider/auth'
 
 
 function Menu() {
 
-    const { navigateTo, PAGE_PRODUCTS } = React.useContext(AuthContext)
+    const { navigateTo, PAGE_PRODUCTS } = React.useContext(CartContext)
 
     return (
         <div className='menu-case'>

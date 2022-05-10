@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { AuthProvider } from './provider/auth';
+import { CartProvider } from './provider/auth';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AuthProvider>
+    <CartProvider>
       <App />
-    </AuthProvider>
+    </CartProvider>
   </React.StrictMode>
 );

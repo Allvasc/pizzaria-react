@@ -1,10 +1,10 @@
 import React from 'react'
 import './Cart.css'
-import { AuthContext } from '../../provider/auth'
+import { CartContext } from '../../provider/auth'
 
 const Cart = () => {
 
-    const { cart, getTotalSum, clearCart, setQuantity, removeFromCart } = React.useContext(AuthContext)
+    const { cart, getTotalSum, clearCart, setQuantity, removeFromCart } = React.useContext(CartContext)
 
 
 

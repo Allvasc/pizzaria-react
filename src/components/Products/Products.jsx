@@ -1,12 +1,12 @@
 import React from "react";
 import "./Products.css"
 import { AiFillStar } from "react-icons/ai";
-import { AuthContext } from '../../provider/auth'
+import { CartContext } from '../../provider/auth'
 
 
 const Products = () => {
 
-  const { data, cart, setCart } = React.useContext(AuthContext)
+  const { data, cart, setCart } = React.useContext(CartContext)
 
   const { productItems } = data;
 

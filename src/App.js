@@ -5,12 +5,12 @@ import Products from './components/Products/Products'
 import Cart from './components/Cart/Cart';
 import Header from './components/Header/Header';
 import Menu from './components/Menu/Menu';
-import { AuthContext } from './provider/auth'
+import { CartContext } from './provider/auth'
 
 
 function App() {
 
-  const { page, PAGE_PRODUCTS, PAGE_CART } = React.useContext(AuthContext)
+  const { page, PAGE_PRODUCTS, PAGE_CART } = React.useContext(CartContext)
 
   return (
     <div className="App">
